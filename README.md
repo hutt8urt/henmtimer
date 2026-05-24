@@ -100,10 +100,10 @@ for every cycle.
 # Example Output
 
 ```text id="jlwm8u"
-ADDS IN 10s <<<
-ADDS IN 3s <<<
-ADDS IN 2s <<<
-ADDS NOW! <<<
+>>> ADDS IN 10s <<<
+>>> ADDS IN 3s <<<
+>>> ADDS IN 2s <<<
+>>> ADDS NOW! <<<
 ```
 
 ---
@@ -131,5 +131,11 @@ The addon only:
 
 No combat automation, targeting, movement, packet interaction, or unattended gameplay functionality is included.
 
+---
+
 # Author
+
 toogood
+
+```
+```
