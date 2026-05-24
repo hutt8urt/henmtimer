@@ -1,4 +1,3 @@
-```
 # HENM Timer
 
 HENM Timer is an Ashita v4 addon that provides a compact ImGui interface for managing repeating encounter timers.
