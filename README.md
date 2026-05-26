@@ -1,22 +1,29 @@
 ```md id="mq7zpl"
-# HENM Timer
+# AnyTimer
 
-HENM Timer is an Ashita v4 addon that provides a compact ImGui interface for managing repeating encounter timers.
-The addon allows players to quickly start and stop repeating add timers through a simple UI instead of manually tracking countdowns during combat.
-Designed primarily for HNMs and endgame encounters with repeating mechanics, HENM Timer helps improve raid coordination and awareness.
+AnyTimer is an Ashita v4 addon that provides a compact ImGui interface for managing repeating custom timers.
+
+The addon allows players to quickly create, start, and stop repeating countdown timers through a simple UI instead of manually tracking mechanics during combat or events.
+
+Designed for HNMs, endgame encounters, spawn tracking, reminders, and general encounter coordination, AnyTimer helps improve group awareness with automatic countdown announcements and a live timer display.
 
 # Features
 - Compact ImGui UI
 - Adjustable repeating timer
-- Customizable add/message label
+- Fully customizable event/message label
 - Automatic countdown announcements
 - Real-time countdown display
 - Simple start/stop controls
-- Lightweight encounter timer utility
+- Lightweight and minimal
 
 # Installation
-Place the addon folder inside: Ashita/addons/
-Load the addon in-game: /addon load henm_timer
+Place the addon folder inside:
+
+Ashita/addons/
+
+Load the addon in-game:
+
+/addon load anytimer
 
 # Usage
 
@@ -29,19 +36,21 @@ Example:
 > Creates a repeating 47 second timer.
 
 ## Message
-Set the message label used for countdown announcements.
+Set the custom message label used for countdown announcements.
 
 Examples:
 * ADDS
-* CRAB
 * PHASE
 * SPAWN
+* STUN
+* METEOR
+* CHARM
 
 ## Start Timer
-Starts the repeating encounter timer.
+Starts the repeating timer.
 
 ## Stop Timer
-Stops the repeating encounter timer.
+Stops the repeating timer.
 
 # Countdown Warnings
 The addon automatically announces:
@@ -56,8 +65,18 @@ The addon automatically announces:
 * ADDS IN 2s
 * ADDS NOW!
 
+# UI Display
+The timer window displays:
+* Current timer length
+* Custom event label
+* Start/Stop controls
+* Live countdown
+
+Example:
+"Next Event: 18s"
+
 # Notes
-HENM Timer does not automate gameplay in any way.
+AnyTimer does not automate gameplay in any way.
 
 The addon only:
 * tracks local timers
