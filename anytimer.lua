@@ -1,6 +1,6 @@
 addon.author   = 'toogood'
 addon.name     = 'anytimer'
-addon.version  = '2.1'
+addon.version  = '2.2'
 
 require('common')
 local imgui = require('imgui')
@@ -11,6 +11,11 @@ local imgui = require('imgui')
 local active = false
 local interval = { 30 }
 local next_cycle = 0
+
+-------------------------------------------------
+-- Repeat Toggle
+-------------------------------------------------
+local repeat_timer = { true }
 
 -------------------------------------------------
 -- Message Buffer
@@ -39,7 +44,7 @@ end
 ashita.events.register('d3d_present', 'anytimer_ui', function ()
 
     imgui.SetNextWindowSize(
-        {260, 170},
+        {260, 190},
         ImGuiCond_FirstUseEver
     )
 
@@ -62,6 +67,11 @@ ashita.events.register('d3d_present', 'anytimer_ui', function ()
         imgui.Text('Message')
         imgui.PushItemWidth(180)
         imgui.InputText('##message', message, 64)
+
+        -------------------------------------------------
+        -- Repeat Toggle
+        -------------------------------------------------
+        imgui.Checkbox('Repeat Timer', repeat_timer)
 
         -------------------------------------------------
         -- Start
@@ -166,8 +176,20 @@ ashita.events.register('d3d_present', 'anytimer_tick', function ()
             )
         )
 
-        next_cycle = now + interval[1]
+        -------------------------------------------------
+        -- Repeat Or Stop
+        -------------------------------------------------
+        if (repeat_timer[1]) then
 
-        resetWarnings()
+            next_cycle = now + interval[1]
+
+            resetWarnings()
+
+        else
+
+            active = false
+
+            print('[AnyTimer] One-shot timer completed.')
+        end
     end
 end)
